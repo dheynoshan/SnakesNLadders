@@ -15,7 +15,7 @@ public class Game {
 	
 	String playerTurn = "Player 1";
 	String winner = null;
-	String snakeLadder = null;
+	String snakeLadder;
 			
 	int num = 0;
 	
@@ -35,14 +35,14 @@ public class Game {
 						//Check for snakes
 						if(null!=SnakeLadders.snake.get(player1.getPosition()))
 					    {
-					        System.out.println("swallowed by snake");
+					        snakeLadder = "swallowed by snake";
 					        player1.goTo(SnakeLadders.snake.get(player1.getPosition()));
-					        System.out.println("Swallowed Position" + player1.getPosition());
+					        
 					    }//End of Snake check
 						//Check for ladders
 						if(null!=SnakeLadders.ladder.get(player1.getPosition()))
 					    {
-					        System.out.println("Climbed");
+					        snakeLadder = "Climbed";
 					        //snakeLadder = "Climbed to " + String.valueOf(player1.getPosition());
 					        player1.goTo(SnakeLadders.ladder.get(player1.getPosition()));
 					        System.out.println("Climbed" + player1.getPosition());
