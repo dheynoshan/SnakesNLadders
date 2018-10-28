@@ -23,7 +23,7 @@ public class Game {
 		
 		if(!isWin ) {
 			//Player 1's turn
-			
+			snakeLadder = null;
 			if(player1Turn) {
 				//Rolling the Dice for Player1's
 					num = d.diceRoll();
@@ -45,7 +45,7 @@ public class Game {
 					        snakeLadder = "Climbed";
 					        //snakeLadder = "Climbed to " + String.valueOf(player1.getPosition());
 					        player1.goTo(SnakeLadders.ladder.get(player1.getPosition()));
-					        System.out.println("Climbed" + player1.getPosition());
+					        
 					    }//End of ladder check
 						//Repetition for 1 or 6
 						if(num!=1 && num!=6) {
@@ -70,22 +70,21 @@ public class Game {
 					num = d.diceRoll();
 					//Check the position + roll number <=100					 
 					if((player2.getPosition() + num) <= 100) {
-						
 						player2.changePosition(num);
-						System.out.println("New Position " + player2.getPosition());
+						
 						//Check for snakes
 						if(null!=SnakeLadders.snake.get(player2.getPosition()))
 					    {
-					        System.out.println("swallowed by snake");
+					        
 					        player2.goTo(SnakeLadders.snake.get(player2.getPosition()));
-					        System.out.println("Swallowed Position" + player2.getPosition());
+					        
 					    }//End of Snake check
 						//Check for ladders
 						if(null!=SnakeLadders.ladder.get(player2.getPosition()))
 					    {
-					        System.out.println("Climbed");
+					        
 					        player1.goTo(SnakeLadders.ladder.get(player2.getPosition()));
-					        System.out.println("Climbed" + player2.getPosition());
+					        
 					    }//End of ladder check
 						//Repetition for 1 or 6
 						if(num!=1 && num!=6) {

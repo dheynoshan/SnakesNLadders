@@ -1,5 +1,6 @@
 
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 
@@ -498,6 +499,8 @@ public class GameWindow extends JFrame {
 		gbc_button_51.gridy = 5;
 		contentPane.add(button_51, gbc_button_51);
 		
+		
+		
 		JButton button_41 = new JButton("41");
 		button_41.setPreferredSize(new Dimension(50, 50));
 		GridBagConstraints gbc_button_41 = new GridBagConstraints();
@@ -662,6 +665,13 @@ public class GameWindow extends JFrame {
 		gbc_button_31.gridy = 7;
 		contentPane.add(button_31, gbc_button_31);
 		
+		JLabel snakeLadderVar = new JLabel("");
+		GridBagConstraints gbc_snakeLadderVar = new GridBagConstraints();
+		gbc_snakeLadderVar.insets = new Insets(0, 0, 5, 5);
+		gbc_snakeLadderVar.gridx = 13;
+		gbc_snakeLadderVar.gridy = 5;
+		contentPane.add(snakeLadderVar, gbc_snakeLadderVar);
+		
 		JLabel playerTurn = new JLabel("Player 1");
 		GridBagConstraints gbc_playerTurn = new GridBagConstraints();
 		gbc_playerTurn.insets = new Insets(0, 0, 5, 5);
@@ -688,21 +698,26 @@ public class GameWindow extends JFrame {
 				
 				if((g1.player1.getPosition()!=0)){
 					bmap.get(g1.player1.getPosition()).setText(String.valueOf(g1.player1.getPosition()));
+					bmap.get(g1.player1.getPosition()).setBackground(new JButton().getBackground());
 				}
 				if((g1.player2.getPosition()!=0)) {
 					bmap.get(g1.player2.getPosition()).setText(String.valueOf(g1.player2.getPosition()));
+					bmap.get(g1.player2.getPosition()).setBackground(new JButton().getBackground());
 				}
 				//Game Start
 				g1.GamePlay();
 				
 				if((g1.player1.getPosition()!=0)){
 					bmap.get(g1.player1.getPosition()).setText("p1");
+					bmap.get(g1.player1.getPosition()).setBackground(new Color(102,255,255));
 				}
 				if((g1.player2.getPosition()!=0)) {
 					bmap.get(g1.player2.getPosition()).setText("p2");
+					bmap.get(g1.player2.getPosition()).setBackground(new Color(255,102,102));
 				}
 				
 				winnerLabel.setText(g1.winner);
+				snakeLadderVar.setText(g1.snakeLadder);
 				playerTurn.setText(g1.playerTurn);
 				rollNumber.setText(String.valueOf(g1.num));
 				player1Score.setText(String.valueOf(g1.player1.getPosition()));

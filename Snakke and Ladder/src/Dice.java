@@ -6,7 +6,7 @@ public class Dice {
 	
 	public int diceRoll() {
 		rollNumber = ThreadLocalRandom.current().nextInt(1,7);
-		System.out.println(rollNumber);
+		//System.out.println(rollNumber);
 		return rollNumber;
 	}
 
