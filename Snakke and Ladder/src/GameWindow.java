@@ -13,7 +13,8 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 import java.awt.event.ActionListener;
-
+import java.util.HashMap;
+import java.util.Map;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
@@ -54,6 +55,8 @@ public class GameWindow extends JFrame {
 		gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
+		
+		Map<String, JButton> bmap=new HashMap<String, JButton>();
 		
 		Dice d = new Dice();
 		Game g1 = new Game();		
@@ -956,6 +959,9 @@ public class GameWindow extends JFrame {
 		gbc_button_10.gridx = 10;
 		gbc_button_10.gridy = 10;
 		contentPane.add(button_10, gbc_button_10);
+		
+		bmap.put("button_1", button_1);
+		bmap.get("button_1").setText("hi");
 		
 		
 	}
