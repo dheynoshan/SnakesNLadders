@@ -56,7 +56,7 @@ public class GameWindow extends JFrame {
 		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 		
-		Map<String, JButton> bmap=new HashMap<String, JButton>();
+		Map<Integer, JButton> bmap=new HashMap<Integer, JButton>();
 		
 		Dice d = new Dice();
 		Game g1 = new Game();		
@@ -686,7 +686,22 @@ public class GameWindow extends JFrame {
 		btnRollDice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				if((g1.player1.getPosition()!=0)){
+					bmap.get(g1.player1.getPosition()).setText(String.valueOf(g1.player1.getPosition()));
+				}
+				if((g1.player2.getPosition()!=0)) {
+					bmap.get(g1.player2.getPosition()).setText(String.valueOf(g1.player2.getPosition()));
+				}
+				
 				g1.GamePlay();
+				
+				if((g1.player1.getPosition()!=0)){
+					bmap.get(g1.player1.getPosition()).setText("p1");
+				}
+				if((g1.player2.getPosition()!=0)) {
+					bmap.get(g1.player2.getPosition()).setText("p2");
+				}
+				
 				winnerLabel.setText(g1.winner);
 				playerTurn.setText(g1.playerTurn);
 				rollNumber.setText(String.valueOf(g1.num));
@@ -960,7 +975,109 @@ public class GameWindow extends JFrame {
 		gbc_button_10.gridy = 10;
 		contentPane.add(button_10, gbc_button_10);
 		
-		bmap.put("button_1", button_1);
+		bmap.put(0, btnRollDice);
+		bmap.put(1, button_1);
+		bmap.put(2, button_2);
+		bmap.put(3, button_3);
+		bmap.put(4, button_4);
+		bmap.put(5, button_5);
+		bmap.put(6, button_6);
+		bmap.put(7, button_7);
+		bmap.put(8, button_8);
+		bmap.put(9, button_9);
+		bmap.put(10, button_10);
+		bmap.put(11, button_11);
+		bmap.put(12, button_12);
+		bmap.put(13, button_13);
+		bmap.put(14, button_14);
+		bmap.put(15, button_15);
+		bmap.put(16, button_16);
+		bmap.put(17, button_17);
+		bmap.put(18, button_18);
+		bmap.put(19, button_19);
+		bmap.put(20, button_20);
+		bmap.put(21, button_21);
+		bmap.put(22, button_22);
+		bmap.put(23, button_23);
+		bmap.put(24, button_24);
+		bmap.put(25, button_25);
+		bmap.put(26, button_26);
+		bmap.put(27, button_27);
+		bmap.put(28, button_28);
+		bmap.put(29, button_29);
+		bmap.put(30, button_30);
+		bmap.put(31, button_31);
+		bmap.put(32, button_32);
+		bmap.put(33, button_33);
+		bmap.put(34, button_34);
+		bmap.put(35, button_35);
+		bmap.put(36, button_36);
+		bmap.put(37, button_37);
+		bmap.put(38, button_38);
+		bmap.put(39, button_39);
+		bmap.put(40, button_40);
+		bmap.put(41, button_41);
+		bmap.put(42, button_42);
+		bmap.put(43, button_43);
+		bmap.put(44, button_44);
+		bmap.put(45, button_45);
+		bmap.put(46, button_46);
+		bmap.put(47, button_47);
+		bmap.put(48, button_48);
+		bmap.put(49, button_49);
+		bmap.put(50, button_50);
+		bmap.put(51, button_51);
+		bmap.put(52, button_52);
+		bmap.put(53, button_53);
+		bmap.put(54, button_54);
+		bmap.put(55, button_55);
+		bmap.put(56, button_56);
+		bmap.put(57, button_57);
+		bmap.put(58, button_58);
+		bmap.put(59, button_59);
+		bmap.put(60, button_60);
+		bmap.put(61, button_61);
+		bmap.put(62, button_62);
+		bmap.put(63, button_63);
+		bmap.put(64, button_64);
+		bmap.put(65, button_65);
+		bmap.put(66, button_66);
+		bmap.put(67, button_67);
+		bmap.put(68, button_68);
+		bmap.put(69, button_69);
+		bmap.put(70, button_70);
+		bmap.put(71, button_71);
+		bmap.put(72, button_72);
+		bmap.put(73, button_73);
+		bmap.put(74, button_74);
+		bmap.put(75, button_75);
+		bmap.put(76, button_76);
+		bmap.put(77, button_77);
+		bmap.put(78, button_78);
+		bmap.put(79, button_79);
+		bmap.put(80, button_80);
+		bmap.put(81, button_81);
+		bmap.put(82, button_82);
+		bmap.put(83, button_83);
+		bmap.put(84, button_84);
+		bmap.put(85, button_85);
+		bmap.put(86, button_86);
+		bmap.put(87, button_87);
+		bmap.put(88, button_88);
+		bmap.put(89, button_89);
+		bmap.put(90, button_90);
+		bmap.put(91, button_91);
+		bmap.put(92, button_92);
+		bmap.put(93, button_93);
+		bmap.put(94, button_94);
+		bmap.put(95, button_95);
+		bmap.put(96, button_96);
+		bmap.put(97, button_97);
+		bmap.put(98, button_98);
+		bmap.put(99, button_99);
+		bmap.put(100, button_100);
+		
+		
 		//bmap.get("button_1").setText("hi");
 		
 		
