@@ -961,7 +961,7 @@ public class GameWindow extends JFrame {
 		contentPane.add(button_10, gbc_button_10);
 		
 		bmap.put("button_1", button_1);
-		bmap.get("button_1").setText("hi");
+		//bmap.get("button_1").setText("hi");
 		
 		
 	}
