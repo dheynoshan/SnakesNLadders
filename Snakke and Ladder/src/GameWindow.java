@@ -666,6 +666,12 @@ public class GameWindow extends JFrame {
 		gbc_playerTurn.gridy = 7;
 		contentPane.add(playerTurn, gbc_playerTurn);
 		
+		JLabel winnerLabel = new JLabel("");
+		GridBagConstraints gbc_winnerLabel = new GridBagConstraints();
+		gbc_winnerLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_winnerLabel.gridx = 13;
+		gbc_winnerLabel.gridy = 9;
+		
 		JLabel rollNumber = new JLabel("0");
 		GridBagConstraints gbc_rollNumber = new GridBagConstraints();
 		gbc_rollNumber.insets = new Insets(0, 0, 5, 5);
@@ -678,6 +684,7 @@ public class GameWindow extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				g1.GamePlay();
+				winnerLabel.setText(g1.winner);
 				playerTurn.setText(g1.playerTurn);
 				rollNumber.setText(String.valueOf(g1.num));
 				player1Score.setText(String.valueOf(g1.player1.getPosition()));
@@ -858,11 +865,17 @@ public class GameWindow extends JFrame {
 		gbc_button_11.gridx = 10;
 		gbc_button_11.gridy = 9;
 		contentPane.add(button_11, gbc_button_11);
+		
+		
+		contentPane.add(winnerLabel, gbc_winnerLabel);
 		GridBagConstraints gbc_button_1 = new GridBagConstraints();
 		gbc_button_1.insets = new Insets(0, 0, 0, 5);
 		gbc_button_1.gridx = 1;
 		gbc_button_1.gridy = 10;
 		contentPane.add(button_1, gbc_button_1);
+		
+		
+		
 		
 		JButton button_2 = new JButton("2");
 		button_2.addActionListener(new ActionListener() {
