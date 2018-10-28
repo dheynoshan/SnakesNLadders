@@ -692,7 +692,7 @@ public class GameWindow extends JFrame {
 				if((g1.player2.getPosition()!=0)) {
 					bmap.get(g1.player2.getPosition()).setText(String.valueOf(g1.player2.getPosition()));
 				}
-				
+				//Game Start
 				g1.GamePlay();
 				
 				if((g1.player1.getPosition()!=0)){
